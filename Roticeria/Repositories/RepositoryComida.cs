@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Roticeria.Repositories
 {
+    
     internal class RepositoryComida
     {
         string urlApi = "https://documentalesmaui-2ada.restdb.io/rest/comida"; HttpClient client = new HttpClient();

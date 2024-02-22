@@ -32,7 +32,7 @@ public partial class AgregarComida : ContentPage
         {
             await DisplayAlert("Notificación", "Comida guardado", "OK");
             await Navigation.PopAsync();
-        }
+        }                                                                                                                                                                                                                                
     }
 
     private async  void CancelarBtn_Clicked(object sender, EventArgs e)

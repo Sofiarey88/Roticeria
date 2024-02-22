@@ -25,16 +25,15 @@ public partial class EditarComida : ContentPage
         txtNombre.Text = ComidaSeleccionada.nombre;
         txtIngredientes.Text = ComidaSeleccionada.ingredientes;
         txtPrecio.Text = ComidaSeleccionada.precio.ToString();
+        txtPuntaje.Text = ComidaSeleccionada.puntaje.ToString();
         txtPortadaUrl.Text = ComidaSeleccionada.portada_url;
-        txtPuntaje.Text = ComidaSeleccionada.precio.ToString();
-
-
     }
 
     private async void GuardarBtn_Clicked(object sender, EventArgs e)
     {
         Comida nuevaComida = new Comida()
         {
+            _id = ComidaSeleccionada._id,
             nombre = txtNombre.Text,
             ingredientes = txtIngredientes.Text,
             precio = Convert.ToInt32(txtPrecio.Text),
@@ -44,7 +43,7 @@ public partial class EditarComida : ContentPage
 
 
         //enviamos por POST el objeto que creamos a la URL de la API
-        var roticeria = await repositoryComida.AddAsync(nuevaComida);
+        var roticeria = await repositoryComida.UpdateAsync(nuevaComida);
 
 
         if (roticeria)

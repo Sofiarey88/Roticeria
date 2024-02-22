@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Roticeria.Views.InicioApp"
              Title="InicioApp">
-    <VerticalStackLayout Spacing="20" Margin="100,10,100,10">
+    <Grid>
+
+        <Image Source="https://i.pinimg.com/564x/61/5d/39/615d39c67872c804a89c28185289c34c.jpg" Aspect="AspectFill" />
+        <VerticalStackLayout Spacing="10" Margin="50,10,50,10">
         <Label 
             Text="Comidas"
             VerticalOptions="Start" 
@@ -21,22 +24,32 @@
             Clicked="EditarComida_Clicked"  
             Style="{StaticResource  EstiloBotonDestacado}"
             />
+        <Button
+        x:Name="EliminarComida"
+        Text="Eliminar Comida"
+        Clicked="EliminarComida_Clicked_1"  
+        Style="{StaticResource  EstiloBotonDestacado}"
+        />
+       
 
+        <ScrollView HeightRequest="350">
         <CollectionView x:Name="ComidasCollectionView"
                 SelectionMode="Single">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="*,2*" ColumnDefinitions="*,2*,2*">
-                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding portada_url}"/>
-                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding nombre}" FontSize="28"/>
-                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ingredientes}"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding puntaje}"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding precio}"/>
+                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*,2*,*">
+                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="{Binding portada_url}" Aspect="AspectFill"/>
+                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding nombre}" FontSize="20" FontAttributes="Bold" Margin="5,0,0,0"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ingredientes}" FontSize="14" Margin="5,0,0,0"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding puntaje}" FontSize="14" HorizontalTextAlignment="End" Margin="0,0,5,0"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding precio}" FontSize="14" Margin="5,0,0,0"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
+            </ScrollView>
 
     </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>

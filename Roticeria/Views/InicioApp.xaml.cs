@@ -8,7 +8,7 @@ namespace Roticeria.Views;
 public partial class InicioApp : ContentPage
 {
     public ObservableCollection<Comida> Comidas { get; set; }
-    Comida ComidaSeleccionada { get; set; }
+    public Comida ComidaSeleccionada { get; set; }
     RepositoryComida repositoryComidas = new RepositoryComida();
     
     public InicioApp()
@@ -68,7 +68,22 @@ public partial class InicioApp : ContentPage
 
    
 
-    private async void EliminarComida_Clicked(object sender, EventArgs e)
+   
+    
+
+    private async void EditarComida_Clicked(Object sender, EventArgs e)
+    {
+        if (ComidaSeleccionada != null)
+        {
+            await Navigation.PushAsync(new EditarComida(ComidaSeleccionada));
+        }
+        else
+        {
+            await Application.Current.MainPage.DisplayAlert("Editar", "Error: debe seleccionar la comida a editar", "ok");
+        }
+    }
+
+    private async void EliminarComida_Clicked_1(object sender, EventArgs e)
     {
         if (ComidaSeleccionada != null)
         {
@@ -96,17 +111,5 @@ public partial class InicioApp : ContentPage
     private async void AgregarComida_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new AgregarComida());
-    }
-
-    private async void EditarComida_Clicked(Object sender, EventArgs e)
-    {
-        if (ComidaSeleccionada != null)
-        {
-            await Navigation.PushAsync(new EditarComida(ComidaSeleccionada));
-        }
-        else
-        {
-            await Application.Current.MainPage.DisplayAlert("Editar", "Error: debe seleccionar la comida a editar", "ok");
-        }
     }
 }

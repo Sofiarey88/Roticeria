@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Roticeria.Views.EditarComida"
              Title="EditarComida">
-    <ScrollView>
+    <Grid>
+
+        <Image Source="https://i.pinimg.com/564x/61/5d/39/615d39c67872c804a89c28185289c34c.jpg" Aspect="AspectFill" />
+        <ScrollView>
         <VerticalStackLayout HorizontalOptions="Center">
             <Label 
-         Text="Agregar Documental"
+         Text="Editar Comida"
          VerticalOptions="Center" 
          HorizontalOptions="Center" />
 
@@ -40,4 +43,5 @@
 
         </VerticalStackLayout>
     </ScrollView>
+    </Grid>
 </ContentPage>

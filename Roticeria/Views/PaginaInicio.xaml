@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Roticeria.Views.PaginaInicio"
+             Title="PaginaInicio">
+
+    <Grid>
+
+        <Image Source="https://i.pinimg.com/564x/57/2e/76/572e76be3927e1fec561563de9d1f366.jpg" Aspect="AspectFill" />
+
+        <VerticalStackLayout>
+       
+        <Label 
+            Text="PAGINA DE INICIO"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button
+      x:Name="Comidas"
+      Text="Comidas"
+      Clicked="Comidas_Clicked"  
+      Style="{StaticResource  EstiloBotonDestacado}"
+      />
+    </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

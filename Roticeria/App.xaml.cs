@@ -1,4 +1,7 @@
-﻿namespace Roticeria
+﻿using Firebase.Auth;
+using Roticeria.Views;
+
+namespace Roticeria
 {
     public partial class App : Application
     {
@@ -6,7 +9,7 @@
         {
             InitializeComponent();
 
-            MainPage = new InicioApp();
+            MainPage = new NavigationPage(new PaginaInicio());
         }
     }
 }

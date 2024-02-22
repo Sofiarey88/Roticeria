@@ -12,8 +12,10 @@
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="CornerRadius" Value="20" />
     </Style>
-    
-    <Style x:Key="EstiloBotonDestacado" TargetType="Button" 
+
+  
+
+        <Style x:Key="EstiloBotonDestacado" TargetType="Button" 
            BasedOn="{StaticResource EstiloBoton}">
         <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
